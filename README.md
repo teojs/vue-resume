@@ -16,4 +16,4 @@ npm run build
 
 ```
 
-这是该代码构建后的页面，欢迎访问浏览>>[个人简历](http://cheesenx.github.io/vue-resume) 
+这是该代码构建后的页面，欢迎访问浏览>>[个人简历](http://cheesenx.github.io) 
