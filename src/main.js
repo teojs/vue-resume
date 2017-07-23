@@ -9,9 +9,5 @@ Vue.use(Http)
 new Vue({
   el: '#app',
   template: '<App/>',
-  components: { App },
-  mounted() {
-    this.$nextTick(function() {
-    })
-  }
+  components: { App }
 })

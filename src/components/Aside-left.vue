@@ -4,9 +4,13 @@
   </aside>
 </template>
 <script>
-
 export default {
-  name: 'asideLeft'
+  name: 'Aside-left',
+  data() {
+    return {
+
+    }
+  }
 }
 </script>
 <style>

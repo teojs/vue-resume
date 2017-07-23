@@ -16,7 +16,7 @@ import Banner from './components/Banner.vue'
 import baseInfo from './components/Base-info.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Loading,
     asideLeft,
@@ -46,20 +46,16 @@ export default {
   },
   methods: {
     getResumeData: function() {
-      this.$http.get('./static/resume.json').then((data) => {
-      	if (data.body.status == "0") {
-	        this.username = data.body.userName
-	        this.jobType = data.body.jobType
-	        this.baseInfo = data.body.baseInfo
-	        this.skills = data.body.skills
-	        this.workExperience = data.body.workExperience
-	        this.careerObjective = data.body.careerObjective
-	        this.eduExperience = data.body.eduExperience
-	        this.projectExperience = data.body.projectExperience
-	        this.relatedWorks = data.body.relatedWorks
-      	} else{
-      		alert('数据获取失败！')
-      	}
+      this.$http.get('./static/jsons/resume.json').then((data) => {
+        this.username = data.body.userName
+        this.jobType = data.body.jobType
+        this.baseInfo = data.body.baseInfo
+        this.skills = data.body.skills
+        this.workExperience = data.body.workExperience
+        this.careerObjective = data.body.careerObjective
+        this.eduExperience = data.body.eduExperience
+        this.projectExperience = data.body.projectExperience
+        this.relatedWorks = data.body.relatedWorks
       })
     },
     hideLoading: function() {

@@ -35,7 +35,7 @@
           <dl v-for='item in eduExperience.secondlist'>
             <dt>{{item.list[0]}}</dt>
             <dd>
-              <div class="flex-box flex-start f90" v-for='list in item.list'  v-if='list.listName'>
+              <div class="flex-box flex-start f90" v-for='list in item.list' v-if='list.listName'>
                 <div class="nowrap">
                   <p>{{list.listName}}</p>
                 </div>
@@ -53,7 +53,7 @@
           <dl v-for='item in projectExperience.secondlist'>
             <dt>{{item.list[0]}}</dt>
             <dd>
-              <div class="flex-box flex-start f90" v-for='list in item.list'  v-if='list.listName'>
+              <div class="flex-box flex-start f90" v-for='list in item.list' v-if='list.listName'>
                 <div class="nowrap">
                   <p>{{list.listName}}</p>
                 </div>
@@ -67,7 +67,7 @@
           <dl v-for='item in relatedWorks.secondlist'>
             <dt>{{item.list[0]}}</dt>
             <dd>
-              <div class="flex-box flex-start f90" v-for='list in item.list'  v-if='list.listName'>
+              <div class="flex-box flex-start f90" v-for='list in item.list'>
                 <div class="nowrap">
                   <p>{{list.listName}}</p>
                 </div>
@@ -83,12 +83,12 @@
 <script>
 export default {
   name: 'Aside-right',
-  data () {
+  data() {
     return {
-      
+
     }
   },
-  props:['workExperience', 'careerObjective', 'eduExperience', 'projectExperience', 'relatedWorks']
+  props: ['workExperience', 'careerObjective', 'eduExperience', 'projectExperience', 'relatedWorks']
 }
 </script>
 <style>
