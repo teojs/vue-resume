@@ -8,13 +8,16 @@ html {
     font-family: 'PingFang', sans-serif;
     color: #404040;
 }
+
 body {
-    height: 100%;
+    height: 100%; // overflow: hidden;
 }
+
 * {
     transition: all 200ms;
     box-sizing: border-box;
 }
+
 a {
     color: inherit;
     &[href=tel] {
@@ -22,8 +25,7 @@ a {
     }
     .icon-wailian,
     .wailian {
-        width: 0;
-        // margin-right: 0;
+        width: 0; // margin-right: 0;
         overflow: hidden;
     }
     &:hover {
@@ -32,13 +34,17 @@ a {
             width: 20px;
         }
     }
+    &[title="站长统计"] {
+        display: none;
+    }
 }
+
 p {
     text-align: justify;
     margin: 5px 0;
-    line-height: 1.6;
-    // word-break: break-all;
+    line-height: 1.6; // word-break: break-all;
 }
+
 .iconfont {
     margin-right: 10px;
     font-size: 110%;
@@ -73,6 +79,7 @@ p {
         }
     }
 }
+
 .iconsvg {
     width: 1em;
     height: 1em;
@@ -82,45 +89,55 @@ p {
     color: inherit;
     margin-right: 10px;
 }
+
 .ib {
     display: inline-block;
     vertical-align: middle;
 }
+
 .f120 {
     font-size: 120%;
 }
+
 .f110 {
     font-size: 110%;
 }
+
 .f90 {
     font-size: 90%;
 }
+
 .f80 {
     font-size: 80%;
 }
+
 .gray {
     color: #666;
 }
+
 .nowrap {
     white-space: nowrap;
 }
+
 .mt20 {
     margin-top: 20px;
 }
+
 .hide {
     overflow: hidden;
 }
+
 .normal {
     white-space: initial !important;
 }
+
 .maskLayer {
     width: 100%;
     height: 100%;
     position: fixed;
     background: rgba(255, 255, 255, 0.7);
     z-index: 10;
-    display: none;
-    // img {
+    display: none; // img {
     //     max-width: 80%;
     //     max-height: 80%;
     //     cursor: -webkit-zoom-out;
@@ -128,10 +145,10 @@ p {
     //     margin: auto;
     // }
 }
+
 aside {
     &.aside-left {
-        width: 350px;
-        // min-height: 100%;
+        width: 350px; // min-height: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -189,13 +206,13 @@ aside {
     &.aside-right {
         width: 100%;
         height: 100%;
-        // position: relative;
         section {
             width: calc((100% - 350px)/2 - 10px);
             position: absolute;
             background: #fff;
             box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
             padding: 20px 20px 20px 30px;
+            overflow: hidden;
             &.section-left {
                 top: 0;
                 right: calc((100% - 350px)/2);
@@ -261,6 +278,7 @@ aside {
         }
     }
 }
+
 .flex-box {
     box-sizing: border-box;
     display: flex;
@@ -304,28 +322,34 @@ aside {
         flex-direction: column;
     }
 }
+
 .fixedTo {
     position: fixed !important;
     top: auto !important;
     top: 0 !important;
 }
+
 .fixedBottom {
     position: fixed !important;
     top: auto !important;
     bottom: 0 !important;
 }
+
 .fixed {
     position: fixed;
 }
+
 .workTime {
     font-size: 80%;
     color: #666;
 }
+
 .content {
     // display: none;
     padding-left: 350px;
     position: relative;
 }
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -338,6 +362,7 @@ aside {
         transform: translate3d(0, 0, 0);
     }
 }
+
 .slideIn {
     -webkit-animation-duration: 0.3s;
     animation-duration: 0.3s;
@@ -346,18 +371,22 @@ aside {
     -webkit-animation-name: slideIn;
     animation-name: slideIn;
 }
+
 .delay100 {
     -webkit-animation-delay: 0.1s;
     animation-delay: 0.1s;
 }
+
 .delay200 {
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
+
 .delay2000 {
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
 }
+
 @media only screen and (max-width: 1100px) {
     aside {
         &.aside-left {}
@@ -376,6 +405,7 @@ aside {
         }
     }
 }
+
 @media only screen and (max-width: 900px) {
     .content {
         padding-left: 320px;
@@ -386,20 +416,22 @@ aside {
         }
     }
 }
+
 @media only screen and (max-width: 750px) {
     .content {
         padding-left: 0;
     }
     aside {
         &.aside-left {
-            width: 80%;
+            width: 100%;
             min-height: auto;
             position: relative;
             margin: 0 auto 10px;
         }
         &.aside-right {
             section {
-                width: 80%;
+                width: 100%;
+                position: relative;
                 &.section-left {
                     left: 0%;
                     margin: 0 auto 10px;
@@ -411,8 +443,14 @@ aside {
             }
         }
     }
+    .baseInfo ul {
+        display: inline-block;
+        width: 48%;
+        vertical-align: top;
+    }
 }
-@media only screen and (max-width: 500px) {
+
+@media only screen and (max-width: 580px) {
     aside {
         &.aside-left {
             width: 100%;
@@ -430,36 +468,13 @@ aside {
             }
         }
     }
+    .baseInfo ul {
+        display: block;
+        width: 100%;
+        vertical-align: top;
+    }
 }
-// @media print {
-//     a {
-//         text-decoration: none;
-//     }
-//     .content {
-//         padding-left: 320px;
-//     }
-//     aside {
-//         &.aside-left {
-//             width: 320px;
-//             position: fixed;
-//             top: 0;
-//             left: 0;
-//         }
-//         &.aside-right {
-//             section {
-//                 width: 99%;
-//                 position: relative;
-//                 &.section-left {
-//                     left: 1%;
-//                     margin-bottom: 10px;
-//                 }
-//                 &.section-right {
-//                     left: 1%;
-//                 }
-//             }
-//         }
-//     }
-// }
+
 @media print {
     a {
         text-decoration: none;

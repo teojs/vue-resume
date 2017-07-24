@@ -40,6 +40,10 @@ export default {
   },
   mounted() {
     this.$nextTick(function() {
+      //一下定时器是给开发用的，上线时用下面注释掉的那个
+      // setInterval(() => {
+      //   this.getResumeData();
+      // }, 100)
       this.getResumeData();
       this.hideLoading();
     })
@@ -59,9 +63,14 @@ export default {
       })
     },
     hideLoading: function() {
+      window.onload = () => {
+        setTimeout(() => {
+          this.already = true
+        }, 1)
+      }
       setTimeout(() => {
         this.already = true
-      }, 2000)
+      }, 10000)
     }
   }
 }
