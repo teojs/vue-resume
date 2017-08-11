@@ -2,10 +2,10 @@
   <div class="content">
     <Loading :already='already'></Loading>
     <asideLeft v-show='already'>
-      <Banner :username='username' :jobType='jobType'></Banner>
-      <baseInfo :baseInfo='baseInfo' :skills='skills'></baseInfo>
+      <Banner :username='resumeData.userName' :jobType='resumeData.jobType'></Banner>
+      <baseInfo :baseInfo='resumeData.baseInfo' :skills='resumeData.skills'></baseInfo>
     </asideLeft>
-    <asideRight v-show='already' :workExperience='workExperience' :careerObjective='careerObjective' :eduExperience='eduExperience' :projectExperience='projectExperience' :relatedWorks='relatedWorks'></asideRight>
+    <asideRight v-show='already' :workExperience='resumeData.workExperience' :careerObjective='resumeData.careerObjective' :eduExperience='resumeData.eduExperience' :projectExperience='resumeData.projectExperience' :relatedWorks='resumeData.relatedWorks'></asideRight>
   </div>
 </template>
 <script>
@@ -14,7 +14,7 @@ import asideLeft from './components/Aside-left.vue'
 import asideRight from './components/Aside-right.vue'
 import Banner from './components/Banner.vue'
 import baseInfo from './components/Base-info.vue'
-
+import axios from 'axios'
 export default {
   name: 'App',
   components: {
@@ -27,42 +27,53 @@ export default {
   data() {
     return {
       already: false,
-      username: '',
-      jobType: '',
-      baseInfo: [],
-      skills: [],
-      workExperience: [],
-      careerObjective: [],
-      eduExperience: [],
-      projectExperience: [],
-      relatedWorks: [],
+      // username: '',
+      // jobType: '',
+      // baseInfo: [],
+      // skills: [],
+      // workExperience: [],
+      // careerObjective: [],
+      // eduExperience: [],
+      // projectExperience: [],
+      // relatedWorks: [],
     }
   },
   mounted() {
-    this.$nextTick(function() {
+    this.$nextTick(function () {
       //一下定时器是给开发用的，上线时用下面注释掉的那个
       // setInterval(() => {
       //   this.getResumeData();
       // }, 100)
-      this.getResumeData();
+      // this.getResumeData();
       this.hideLoading();
+      // this.onFocus();
     })
   },
   methods: {
-    getResumeData: function() {
-      this.$http.get('./static/jsons/resume.json').then((data) => {
-        this.username = data.body.userName
-        this.jobType = data.body.jobType
-        this.baseInfo = data.body.baseInfo
-        this.skills = data.body.skills
-        this.workExperience = data.body.workExperience
-        this.careerObjective = data.body.careerObjective
-        this.eduExperience = data.body.eduExperience
-        this.projectExperience = data.body.projectExperience
-        this.relatedWorks = data.body.relatedWorks
-      })
-    },
-    hideLoading: function() {
+    // getResumeData: function () {
+    //   axios.get('/static/jsons/resume.json').then((res) => {
+    //     if (res.data.status === 0) {
+    //       var data = res.data
+    //       this.username = data.userName
+    //       this.jobType = data.jobType
+    //       this.baseInfo = data.baseInfo
+    //       this.skills = data.skills
+    //       this.workExperience = data.workExperience
+    //       this.careerObjective = data.careerObjective
+    //       this.eduExperience = data.eduExperience
+    //       this.projectExperience = data.projectExperience
+    //       this.relatedWorks = data.relatedWorks
+    //     } else {
+    //       alert('数据获取异常！')
+    //     }
+    //   })
+    // },
+    // onFocus: function() {
+    //   window.onfocus = () => {
+    //     this.getResumeData();
+    //   }
+    // },
+    hideLoading: function () {
       window.onload = () => {
         setTimeout(() => {
           this.already = true
@@ -71,6 +82,11 @@ export default {
       setTimeout(() => {
         this.already = true
       }, 10000)
+    }
+  },
+  computed: {
+    resumeData() {
+      return this.$store.state
     }
   }
 }

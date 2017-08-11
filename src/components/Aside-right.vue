@@ -3,8 +3,8 @@
     <section class="section-left slideIn delay100">
       <ul class="time-list">
         <li class="list">
-          <h1><i class="iconfont ib" :class='"icon-" + workExperience.iconName'></i>{{workExperience.firstTitle}}</h1>
-          <dl v-for='item in workExperience.secondlist'>
+          <h1><i class="iconfont ib" :class='"icon-" + careerObjective.iconName'></i>{{careerObjective.firstTitle}}</h1>
+          <dl v-for='item in careerObjective.secondlist'>
             <dt>{{item.list[0]}}</dt>
             <dd>
               <div class="flex-box flex-start f90" v-for='list in item.list' v-if='list.listName'>
@@ -17,8 +17,8 @@
           </dl>
         </li>
         <li class="list">
-          <h1><i class="iconfont ib" :class='"icon-" + careerObjective.iconName'></i>{{careerObjective.firstTitle}}</h1>
-          <dl v-for='item in careerObjective.secondlist'>
+          <h1><i class="iconfont ib" :class='"icon-" + workExperience.iconName'></i>{{workExperience.firstTitle}}</h1>
+          <dl v-for='item in workExperience.secondlist'>
             <dt>{{item.list[0]}}</dt>
             <dd>
               <div class="flex-box flex-start f90" v-for='list in item.list' v-if='list.listName'>
