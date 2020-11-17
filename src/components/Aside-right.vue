@@ -49,7 +49,8 @@
     <section class="section-right slideIn delay200">
       <ul class="time-list">
         <li class="list">
-          <h1><i class="iconfont ib" :class='"icon-" + projectExperience.iconName'></i>{{projectExperience.firstTitle}}</h1>
+          <h1><i class="iconfont ib" :class='"icon-" + projectExperience.iconName'></i>{{projectExperience.firstTitle}}
+          </h1>
           <dl v-for='item in projectExperience.secondlist'>
             <dt>{{item.list[0]}}</dt>
             <dd>
@@ -83,7 +84,7 @@
 <script>
 export default {
   name: 'Aside-right',
-  data() {
+  data () {
     return {
 
     }
